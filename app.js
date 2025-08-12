@@ -565,4 +565,13 @@ class SortingVisualizer {
 // Initialize the visualizer when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new SortingVisualizer();
+    window.addEventListener('scroll', function () {
+        const footer = document.querySelector('footer');
+        if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2) {
+          footer.style.opacity = '1';
+        } else {
+          footer.style.opacity = '0';
+        }
+      });
+      
 });
